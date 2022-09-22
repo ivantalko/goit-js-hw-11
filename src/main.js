@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 
 const galleryEl = document.querySelector('.gallery');
 const formEl = document.querySelector('#search-form');
-const moreBtn = document.querySelector('.visually-hidden');
+const moreBtn = document.querySelector('.load-more');
 let page = 1;
 
 const totalPages = Math.ceil(500 / itemPerPage);
