@@ -5,12 +5,12 @@ body {
 }
 
 button {
-  background-color: rgb(255, 247, 0);
+  background-color: #ff0000;
   height: 30px;
   border: 1px solid transparent;
   border-radius: 5px;
-
-  margin: 0;
+  display: block;
+  margin: auto;
   padding: 0 5px;
 }
 
@@ -94,10 +94,11 @@ img {
   width: 100%;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  object-fit: cover;
   /* object-fit: none; */
 }
 .gallery {
-  padding: 15px;
+  padding: 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

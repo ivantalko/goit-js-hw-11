@@ -22,6 +22,7 @@ async function loadMoreCards(searchValue) {
   if (page === totalPages) {
     moreBtn.classList.add('visually-hidden');
   }
+  doLightbox();
 }
 
 function onSubmit(event) {
