@@ -74,6 +74,7 @@ button {
 }
 .info {
   display: flex;
+  padding: 0 20;
 }
 .info-item {
   font-family: inherit;
@@ -84,13 +85,19 @@ button {
   justify-content: center;
 }
 .photo-card {
+  text-align: center;
+  border-radius: 4px;
   background-color: aqua;
   width: 300px;
 }
 img {
   width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  /* object-fit: none; */
 }
 .gallery {
+  padding: 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
