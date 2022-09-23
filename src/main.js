@@ -1,5 +1,5 @@
 import './css/style.css';
-import { BASE_URL, getPhoto, itemPerPage } from './fetch';
+import { BASE_URL, getPhoto } from './fetch';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -9,7 +9,7 @@ const formEl = document.querySelector('#search-form');
 const moreBtn = document.querySelector('.load-more');
 let page = 1;
 
-const totalPages = Math.ceil(500 / itemPerPage);
+const totalPages = Math.ceil(500 / 40);
 
 formEl.addEventListener('submit', onSubmit);
 

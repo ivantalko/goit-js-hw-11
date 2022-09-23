@@ -1,8 +1,5 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import { itemPerPage } from './main';
-
-export const itemPerPage = 40;
 
 const API_KEY = '30084769-91cedc9ad879b4e4c8b5187f4';
 const searchParams = new URLSearchParams({
@@ -10,7 +7,7 @@ const searchParams = new URLSearchParams({
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: 'true',
-  per_page: itemPerPage,
+  per_page: 40,
 });
 
 export const BASE_URL = `https://pixabay.com/api/?${searchParams}`;
