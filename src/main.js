@@ -42,7 +42,9 @@ async function mountData(searchValue) {
     moreBtn.addEventListener('click', () => {
       loadMoreCards(searchValue);
     });
+
     if (data.hits.length === 0) {
+      moreBtn.classList.add('visually-hidden');
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
