@@ -46,8 +46,7 @@ async function mountData(searchValue) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
-    }
-    Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
+    } else Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
     data.hits.forEach(photo => {
       createCardMarkup(photo);
     });
