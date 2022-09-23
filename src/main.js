@@ -1,5 +1,5 @@
 import './css/style.css';
-import { BASE_URL, getPhoto } from './fetch';
+import { BASE_URL, getPhoto } from './api/fetch';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
