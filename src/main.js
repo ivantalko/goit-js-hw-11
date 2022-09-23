@@ -16,9 +16,8 @@ formEl.addEventListener('submit', onSubmit);
 async function loadMoreCards(searchValue) {
   page += 1;
   const data = await getPhoto(searchValue, page);
-  data.hits.forEach(photo => {
-    createCardMarkup(photo);
-  });
+  createGallaryMarkup(data.hits);
+
   if (page === totalPages) {
     moreBtn.classList.add('visually-hidden');
   }
@@ -48,28 +47,26 @@ async function mountData(searchValue) {
         'Sorry, there are no images matching your search query. Please try again.'
       );
     } else Notiflix.Notify.info(`Hooray! We found ${data.totalHits} images.`);
-    data.hits.forEach(photo => {
-      createCardMarkup(photo);
-    });
-    doLightbox();
+    createGallaryMarkup(data.hits);
   } catch (error) {
     moreBtn.classList.add('visually-hidden');
     console.log('error', error);
   }
+  doLightbox();
 }
 
-function createCardMarkup({
-  webformatURL,
-  largeImageURL,
-  tags,
-  likes,
-  views,
-  comments,
-  downloads,
-}) {
-  galleryEl.insertAdjacentHTML(
-    'beforeend',
-    `<div class="photo-card">
+function createGallaryMarkup(cardsArr) {
+  const markUp = cardsArr
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => `<div class="photo-card">
     <a class='link-img' href=${largeImageURL}><img src=${webformatURL} alt=${tags} loading="lazy" class="card-img" height="80%"/></a>
   <div class="info">
     <p class="info-item">
@@ -86,7 +83,9 @@ function createCardMarkup({
     </p>
   </div>
 </div>`
-  );
+    )
+    .join('');
+  galleryEl.insertAdjacentHTML('beforeend', markUp);
 }
 
 function doLightbox() {
